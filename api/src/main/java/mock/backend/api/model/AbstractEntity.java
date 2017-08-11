@@ -21,8 +21,8 @@ import java.util.UUID;
 
 @Data
 @MappedSuperclass
-@ToString(of = {"id", "version"})
-@EqualsAndHashCode(of = {"internalId", "id", "version"})
+@ToString(of = {"id"})
+@EqualsAndHashCode(of = {"internalId", "id"})
 public class AbstractEntity
 {
     public static String DEFAULT_DELETED_VALUE = "0";
@@ -49,26 +49,9 @@ public class AbstractEntity
         this.id = id;
         this.internalId = id;
     }
-
-    /**
-     * version of the entity
-     */
-    @Version
-    private Integer version;
-    /**
-     * created time of the entity
-     */
     private Date createTime;
-    /**
-     * create user of the entity
-     */
-    private String createUser;
-    /**
-     * IP of the create user
-     */
     private String createUserIP;
     private Date updateTime;
-    private String updateUser;
     private String updateUserIP;
 
     /**

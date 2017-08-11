@@ -11,6 +11,7 @@ import mock.backend.api.ws.user.model.CreateUserDTO;
 import mock.backend.api.ws.user.model.UserDTO;
 import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -116,10 +117,11 @@ public class UserWebServiceController extends BaseRestController implements User
             user = userService.saveUser(user);
             return CreateUserDTO.createCreateUserDTO(user);
         }
-        catch (UserException e)
+        catch (DataIntegrityViolationException e)
         {
             logger.error("createUser error",e);
-            return new CreateUserDTO(e.getErrorCode(),e.getErrorDescription());
+            UserException userException = new UserException(SpecialExceptions.USER_EXISTS_EXCEPTION);
+            return new CreateUserDTO(userException.getErrorCode(),userException.getErrorDescription());
         }
         catch (Exception e)
         {
@@ -144,10 +146,11 @@ public class UserWebServiceController extends BaseRestController implements User
             user = userService.saveUser(user);
             return CreateUserDTO.createCreateUserDTO(user);
         }
-        catch (UserException e)
+        catch (DataIntegrityViolationException e)
         {
             logger.error("updateUser error",e);
-            return new CreateUserDTO(e.getErrorCode(),e.getErrorDescription());
+            UserException userException = new UserException(SpecialExceptions.USER_EXISTS_EXCEPTION);
+            return new CreateUserDTO(userException.getErrorCode(),userException.getErrorDescription());
         }
         catch (Exception e)
         {

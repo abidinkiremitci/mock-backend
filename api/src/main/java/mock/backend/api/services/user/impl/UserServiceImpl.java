@@ -1,13 +1,10 @@
 package mock.backend.api.services.user.impl;
 
-import mock.backend.api.enums.SpecialExceptions;
-import mock.backend.api.exceptions.UserException;
-import mock.backend.api.user.UserRepository;
+import lombok.Setter;
 import mock.backend.api.model.user.User;
 import mock.backend.api.services.BaseServiceImpl;
 import mock.backend.api.services.user.UserService;
-import lombok.Setter;
-import org.springframework.dao.DataIntegrityViolationException;
+import mock.backend.api.dao.user.UserRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -54,14 +51,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService
     @Transactional
     public User saveUser(User user)
     {
-        try
-        {
-            User mergedUser = this.userRepository.save(user);
-            return mergedUser;
-        }
-        catch (DataIntegrityViolationException e)
-        {
-            throw new UserException(SpecialExceptions.USER_EXISTS_EXCEPTION);
-        }
+        User mergedUser = this.userRepository.save(user);
+        return mergedUser;
     }
 }

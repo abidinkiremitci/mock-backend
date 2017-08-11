@@ -1,4 +1,4 @@
-package mock.backend.api.user;
+package mock.backend.api.dao.user;
 
 import mock.backend.api.model.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
