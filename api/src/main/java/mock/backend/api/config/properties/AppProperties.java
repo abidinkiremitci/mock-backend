@@ -12,4 +12,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class AppProperties
 {
     private String testProperty;
+    private String environment;
 }
