@@ -11,12 +11,13 @@
 
     <modules>
         <module>api</module>
+        <module>auth</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.2.RELEASE</version>
+        <version>1.5.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -37,6 +38,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -93,6 +95,8 @@
         <project-stage>Development</project-stage>
         <google-guava.version>18.0</google-guava.version>
         <commons-collections.version>3.2.2</commons-collections.version>
+        <spring-boot.version>1.5.6.RELEASE</spring-boot.version>
+        <spring-oauth.version>2.2.0.RELEASE</spring-oauth.version>
     </properties>
 
 </project>
