@@ -2,7 +2,7 @@ package mock.backend.api.services;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
-import mock.backend.api.config.properties.AppProperties;
+import mock.backend.api.config.AppProperties;
 import mock.backend.api.model.AbstractEntity;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.LoggerFactory;

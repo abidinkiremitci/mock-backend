@@ -1,14 +1,23 @@
 # MOCK-APP NOTES
 
-
 ## SpringBoot Run Config:
-VM Options: -Dspring.config.name=application.dev
+VM Options for different environment: 
 
+### Development
+-Dspring.config.name=application.dev
 
-## H2-Console:
-http://localhost:8080/h2-console/
-	jdbc driver: org.h2.Driver
-	jdbc url: jdbc:h2:mem://localhost/~/mockbackendDB;MODE=MYSQL
+### Test
+!!! First things first, run auth server :)
+-Dspring.config.name=application.test
+
+#### H2-Console:
+- Resource Server: jdbc:h2:tcp://localhost/mem:mockbackendDB
+- Auth Server: jdbc:h2:mem://localhost/~/mockbackendDB;MODE=MYSQL
+- http://localhost:8080/h2-console/
+- jdbc driver: org.h2.Driver
+
+### Production
+-Dspring.config.name=application
 
 ## Basic OAuth2:
     -> Getting Token by using basin auth

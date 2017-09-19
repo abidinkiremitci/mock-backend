@@ -1,7 +1,7 @@
 package mock.backend.api.exceptions;
 
 
-import mock.backend.api.enums.SpecialExceptions;
+import mock.backend.api.model.enums.SpecialExceptions;
 
 /**
  * Created by semihunaldi on 13.09.2016.

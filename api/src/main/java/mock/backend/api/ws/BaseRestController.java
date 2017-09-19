@@ -2,7 +2,7 @@ package mock.backend.api.ws;
 
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
-import mock.backend.api.config.properties.AppProperties;
+import mock.backend.api.config.AppProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

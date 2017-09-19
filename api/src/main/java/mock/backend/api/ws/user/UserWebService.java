@@ -1,7 +1,5 @@
 package mock.backend.api.ws.user;
 
-import mock.backend.api.ws.user.model.UserDTO;
-import mock.backend.api.ws.user.model.CreateUserDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

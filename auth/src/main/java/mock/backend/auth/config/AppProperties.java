@@ -1,4 +1,4 @@
-package mock.backend.api.config.properties;
+package mock.backend.auth.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,5 +11,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 public class AppProperties
 {
-    private String testProperty;
+    private String environment;
 }

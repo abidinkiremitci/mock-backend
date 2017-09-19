@@ -1,15 +1,12 @@
-package mock.backend.api.ws.user.impl;
+package mock.backend.api.ws.user;
 
 import com.google.common.base.Preconditions;
-import mock.backend.api.enums.SpecialExceptions;
+import lombok.Setter;
 import mock.backend.api.exceptions.UserException;
+import mock.backend.api.model.enums.SpecialExceptions;
 import mock.backend.api.model.user.User;
 import mock.backend.api.services.user.UserService;
 import mock.backend.api.ws.BaseRestController;
-import mock.backend.api.ws.user.UserWebService;
-import mock.backend.api.ws.user.model.CreateUserDTO;
-import mock.backend.api.ws.user.model.UserDTO;
-import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.RequestBody;

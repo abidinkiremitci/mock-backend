@@ -1,10 +1,9 @@
-package mock.backend.api.services.user.impl;
+package mock.backend.api.services.user;
 
 import lombok.Setter;
+import mock.backend.api.dao.user.UserRepository;
 import mock.backend.api.model.user.User;
 import mock.backend.api.services.BaseServiceImpl;
-import mock.backend.api.services.user.UserService;
-import mock.backend.api.dao.user.UserRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 

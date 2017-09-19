@@ -2,7 +2,7 @@ package mock.backend.api2;
 
 import mock.backend.api.model.user.User;
 import mock.backend.api.services.user.UserService;
-import mock.backend.api.ws.user.model.CreateUserDTO;
+import mock.backend.api.ws.user.CreateUserDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

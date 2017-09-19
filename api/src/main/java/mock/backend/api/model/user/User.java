@@ -1,6 +1,6 @@
 package mock.backend.api.model.user;
 
-import mock.backend.api.enums.YesNo;
+import mock.backend.api.model.enums.YesNo;
 import mock.backend.api.model.AbstractEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

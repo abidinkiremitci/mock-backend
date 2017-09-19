@@ -1,7 +1,7 @@
-package mock.backend.api.ws.user.model;
+package mock.backend.api.ws.user;
 
 import mock.backend.api.ws.BaseResult;
-import mock.backend.api.enums.SpecialExceptions;
+import mock.backend.api.model.enums.SpecialExceptions;
 import mock.backend.api.model.user.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package mock.backend.api.enums;
+package mock.backend.api.model.enums;
 
 /**
  * Created by semihunaldi on 23.08.2016.
