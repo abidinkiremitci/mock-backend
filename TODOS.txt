@@ -1,6 +1,15 @@
-1- AUTH SERVER
-2- RESOURCE SERVER
-3- BASIC USER MANAGEMENT
-4- AOP LOGGING
-5- KEY MANAGEMENT
-6- ADMIN PANEL
+- AUTH SERVER
+    + Basic authentication
+    - Change basic authentication.
+    - Rearrange user-management
+- RESOURCE SERVER
+    - Enable role dependent api
+- USER MANAGEMENT
+    + Basic user management
+    - Facebook integration
+    - Twitter integration
+- AOP LOGGING
+    + Mock logging
+    - Create seperated logging module
+- KEY MANAGEMENT
+- ADMIN PANEL
