@@ -1,0 +1,4 @@
+* linguist-vendored
+*.properties linguist-vendored=false
+*.xml linguist-vendored=false
+*.java linguist-language=Java
