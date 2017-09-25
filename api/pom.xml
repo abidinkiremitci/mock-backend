@@ -50,7 +50,7 @@
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>
             <artifactId>spring-security-oauth2</artifactId>
-            <version>2.2.0.BUILD-SNAPSHOT</version>
+            <version>2.2.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -60,15 +60,10 @@
     </dependencies>
 
     <build>
-        <finalName>${final.name}-${version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>mock.backend.api.ResourceServerApplication</mainClass>
-                    <excludeDevtools>true</excludeDevtools>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -76,7 +71,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <final.name>mock-backend-app</final.name>
     </properties>
 
 </project>
