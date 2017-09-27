@@ -1,5 +1,7 @@
 package mock.backend.api.config;
 
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -11,10 +13,17 @@ import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
 @Configuration
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
+
+    @Setter
+    @Value("${app.properties.auth-server-uri}")
+    String authServerUri;
     @Bean
     public RemoteTokenServices remoteTokenServices() {
         final RemoteTokenServices tokenServices = new RemoteTokenServices();
-        tokenServices.setCheckTokenEndpointUrl("http://localhost:8081/oauth/check_token");
+        String checkTokenUri =
+                new StringBuilder().
+                        append("http://").append(authServerUri).append(":8081/oauth/check_token").toString();
+        tokenServices.setCheckTokenEndpointUrl(checkTokenUri);
         tokenServices.setClientId("resource-server");
         tokenServices.setClientSecret("resource-server");
         return tokenServices;
