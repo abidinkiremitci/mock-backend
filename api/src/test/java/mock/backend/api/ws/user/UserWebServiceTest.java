@@ -1,11 +1,9 @@
 package mock.backend.api.ws.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import mock.backend.api.ResourceServerApplication;
-import mock.backend.api.dao.UserRepository;
-import mock.backend.api.model.User;
-import mock.backend.api.services.UserService;
-import mock.backend.api.ws.GenericResult;
+import mock.backend.ResourceServerApplication;
+import mock.backend.application.service.UserService;
+import mock.backend.domain.repository.UserRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -76,7 +74,7 @@ public class UserWebServiceTest {
                     .get("/api/user/queryUserByEmail?email=test@test.com")
                     .accept(MediaType.APPLICATION_JSON);
             MvcResult mvcResult = mockMvc.perform(requestBuilder).andReturn();
-            GenericResult<User> genericResult = mapper.readValue(mvcResult.getResponse().getContentAsString(), new com.fasterxml.jackson.core.type.TypeReference<GenericResult<User>>(){});
+//            GenericResult<User> genericResult = mapper.readValue(mvcResult.getResponse().getContentAsString(), new com.fasterxml.jackson.core.type.TypeReference<GenericResult<User>>(){});
             System.out.println("Result: " + mvcResult.getResponse().getContentAsString());
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,7 +1,7 @@
 package mock.backend.api;
 
-import mock.backend.api.model.User;
-import mock.backend.api.services.UserService;
+import mock.backend.domain.model.User;
+import mock.backend.application.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,14 +18,15 @@ public class UserTest extends BaseTest
     @Test
     public void createUser()
     {
-        User user = new User();
-        user.setAge(25);
-        user.setEmail("semihunaldi@gmail.com");
-        user.setFirstName("Semih");
-        user.setLastName("Unaldi");
-        user.setLocation("Istanbul/Turkey");
-        user.setMobilePhone("5331234567");
-        user.setUserName("semihunaldi");
+        User user = User.builder()
+                .age(25)
+                .email("semihunaldi@gmail.com")
+                .firstName("Semih")
+                .lastName("Unaldi")
+                .location("Istanbul/Turkey")
+                .mobilePhone("5331234567")
+                .userName("semihunaldi")
+                .build();
         //TODO: check entity equality more elegant way
     }
 }
