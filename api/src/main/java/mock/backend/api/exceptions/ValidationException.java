@@ -1,9 +1,10 @@
 package mock.backend.api.exceptions;
 
-public class ValidationException extends RuntimeException
-{
-    public ValidationException(String message)
-    {
-        super(message);
+import mock.backend.api.model.enums.ResultEnum;
+
+public class ValidationException extends SpecialException {
+
+    public ValidationException(ResultEnum resultEnum) {
+        super(resultEnum);
     }
 }

@@ -1,8 +1,5 @@
 package mock.backend.api.model.enums;
 
-/**
- * Created by semihunaldi on 7.09.2016.
- */
 public enum YesNo
 {
     YES(true),

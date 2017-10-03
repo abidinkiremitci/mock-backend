@@ -19,9 +19,6 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 import javax.sql.DataSource;
 
-/**
- * Created by AbidinK on 12/08/2017.
- */
 @EnableAuthorizationServer
 @Configuration
 @SuppressWarnings("unused")

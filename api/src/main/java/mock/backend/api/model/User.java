@@ -1,21 +1,12 @@
-package mock.backend.api.model.user;
+package mock.backend.api.model;
 
-import mock.backend.api.model.enums.YesNo;
-import mock.backend.api.model.AbstractEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import mock.backend.api.model.enums.YesNo;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Where;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-
-/** T_USER
- * Created by semihunaldi on 10.09.2016.
- */
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -26,8 +17,6 @@ import javax.persistence.UniqueConstraint;
 @Where(clause = "DELETED = '0' and ACTIVE='YES'")
 public class User extends AbstractEntity
 {
-    private String password;
-
     private String firstName;
 
     private String lastName;
@@ -37,8 +26,6 @@ public class User extends AbstractEntity
     private String email;
 
     private String mobilePhone;
-
-    private String token;
 
     private Integer age;
 

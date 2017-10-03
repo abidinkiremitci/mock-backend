@@ -1,15 +1,10 @@
-package mock.backend.api.services.user;
+package mock.backend.api.services;
 
 
-import mock.backend.api.model.user.User;
-import mock.backend.api.services.BaseService;
+import mock.backend.api.model.User;
 
-/**
- * Created by semihunaldi on 09.09.2016.
- */
 public interface UserService extends BaseService
 {
-    String testUser();
 
     User findUserByEmail(String email);
 

@@ -1,8 +1,5 @@
-package mock.backend.api2;
+package mock.backend.api;
 
-/**
- * Created by semihunaldi on 15.11.2016.
- */
 public class BaseTest
 {
     static

@@ -8,9 +8,6 @@ import org.hibernate.id.UUIDGenerator;
 
 import java.io.Serializable;
 
-/**
- * Created by semihunaldi on 27.10.2015.
- */
 public class UpperCaseUUIDGenerator extends UUIDGenerator
 {
     @Override

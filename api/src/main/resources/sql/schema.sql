@@ -1,34 +1,26 @@
-drop table t_user if exists;
-drop table t_customer if exists;
-drop table t_appointment if exists;
-drop table t_customer_appointment if exists;
-drop table t_customer_schedule if exists;
-
-
-create table t_user
+DROP TABLE T_USER IF EXISTS;
+CREATE TABLE T_USER
 (
-  id varchar(255) not null,
-  create_time timestamp,
-  create_user varchar(255),
-  create_userip varchar(255),
-  deleted varchar(255),
-  update_time timestamp,
-  update_user varchar(255),
-  update_userip varchar(255),
-  version integer,
-  age integer,
-  email varchar(255),
-  first_name varchar(255),
-  last_name varchar(255),
-  location varchar(255),
-  mobile_phone varchar(255),
-  password varchar(255),
-  time_zone varchar(255),
-  token varchar(255),
-  user_name varchar(255),
-  active varchar (10),
-  primary key (id)
+  ID VARCHAR(255) NOT NULL,
+  CREATE_TIME TIMESTAMP,
+  CREATE_USER VARCHAR(255),
+  CREATE_USERIP VARCHAR(255),
+  DELETED VARCHAR(255),
+  UPDATE_TIME TIMESTAMP,
+  UPDATE_USER VARCHAR(255),
+  UPDATE_USERIP VARCHAR(255),
+  VERSION INTEGER,
+  AGE INTEGER,
+  EMAIL VARCHAR(255),
+  FIRST_NAME VARCHAR(255),
+  LAST_NAME VARCHAR(255),
+  LOCATION VARCHAR(255),
+  MOBILE_PHONE VARCHAR(255),
+  TIME_ZONE VARCHAR(255),
+  USER_NAME VARCHAR(255),
+  ACTIVE VARCHAR (10),
+  PRIMARY KEY (ID)
 );
-alter table t_user add constraint T_USER_USER_NAME_UNIQUE unique (user_name);
-alter table t_user add constraint T_USER_EMAIL_UNIQUE unique (email);
-alter table t_user add constraint T_USER_ACTIVE_CHK CHECK (active IN ('YES','NO'));
+ALTER TABLE T_USER ADD CONSTRAINT T_USER_USER_NAME_UNIQUE UNIQUE (USER_NAME);
+ALTER TABLE T_USER ADD CONSTRAINT T_USER_EMAIL_UNIQUE UNIQUE (EMAIL);
+ALTER TABLE T_USER ADD CONSTRAINT T_USER_ACTIVE_CHK CHECK (ACTIVE IN ('YES','NO'));

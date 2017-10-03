@@ -13,9 +13,6 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by AbidinK on 20/09/2017.
- */
 @Aspect
 @Component
 public class MethodLoggingAspect

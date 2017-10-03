@@ -5,10 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.vendor.HibernateJpaSessionFactoryBean;
 
-/**
- * Created by semihunaldi on 31.03.2017.
- */
-
 @Configuration
 @EnableConfigurationProperties(AppProperties.class)
 public class AppConfig

@@ -1,38 +1,29 @@
 package mock.backend.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.Version;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
-
-/**
- * Created by semihunaldi on 09.09.2016.
- */
 
 @Data
 @MappedSuperclass
 @ToString(of = {"id"})
-@EqualsAndHashCode(of = {"internalId", "id"})
+@EqualsAndHashCode(of = {"objectId", "id"})
 public class AbstractEntity
 {
     public static String DEFAULT_DELETED_VALUE = "0";
 
     @Transient
-    private String internalId;
+    private String objectId;
 
     public AbstractEntity()
     {
-        this.internalId = UUID.randomUUID().toString();
+        this.objectId = UUID.randomUUID().toString();
     }
 
     /**
@@ -47,11 +38,14 @@ public class AbstractEntity
     public void setId(String id)
     {
         this.id = id;
-        this.internalId = id;
+        this.objectId = id;
     }
     private Date createTime;
-    private String createUserIP;
     private Date updateTime;
+
+    @JsonIgnore
+    private String createUserIP;
+    @JsonIgnore
     private String updateUserIP;
 
     /**
@@ -59,10 +53,16 @@ public class AbstractEntity
      */
     private String deleted = DEFAULT_DELETED_VALUE;
 
-    @Transient
-    public boolean isRecordDeleted()
-    {
-        return !DEFAULT_DELETED_VALUE.equals(getDeleted());
+    @PrePersist
+    protected void onCreate() {
+        createTime = new Date();
+        //TODO: get createUserIp info from request bean
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updateTime = new Date();
+        //TODO: get updateUserIp info from request bean
     }
 
 }

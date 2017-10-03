@@ -1,16 +1,12 @@
-package mock.backend.api.dao.user;
+package mock.backend.api.dao;
 
-import mock.backend.api.model.user.User;
+import mock.backend.api.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
-/**
- * Created by semihunaldi on 11.09.2016.
- */
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String>

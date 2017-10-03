@@ -11,10 +11,7 @@ import org.springframework.validation.ObjectError;
 
 import java.util.List;
 
-/**
- * Created by semihunaldi on 18.8.2015.
- */
-public abstract class BaseRestController
+public abstract class   BaseRestController
 {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 

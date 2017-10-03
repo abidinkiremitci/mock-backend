@@ -10,10 +10,6 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by semihunaldi.
- */
-
 @Component
 public class EntityCommonFieldInterceptor extends EmptyInterceptor
 {
