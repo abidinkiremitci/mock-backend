@@ -11,7 +11,7 @@ public class UserMapper implements Mapper<UserResource, User> {
     @Override
     public User map(UserResource resource) {
         return User.builder()
-                .objectId(resource.getId())
+                .objectId(resource.getUserId())
                 .firstName(resource.getFirstName())
                 .lastName(resource.getLastName())
                 .userName(resource.getUserName())

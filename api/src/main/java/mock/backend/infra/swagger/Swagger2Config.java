@@ -30,7 +30,7 @@ public class Swagger2Config extends WebMvcConfigurerAdapter
 
 
     private Predicate<String> postPaths() {
-        return or(regex("/api/v1/dinner-recipes.*"));
+        return or(regex("/api/v1/users.*"));
     }
 
     private ApiInfo apiInfo() {

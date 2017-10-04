@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import mock.backend.infra.rest.AbstractResource;
 
 import java.util.Date;
@@ -13,10 +14,11 @@ import java.util.Date;
  */
 @ApiModel(value="User Resource class", description="represents an object request or response for User")
 @Data
+@EqualsAndHashCode(callSuper = false, of={"userId"})
 public class UserResource extends AbstractResource {
 
     @ApiModelProperty(value = "represents id of user entity")
-    private String id;
+    private String userId;
 
     @ApiModelProperty(value = "represents first name of user")
     private String firstName;
@@ -53,7 +55,8 @@ public class UserResource extends AbstractResource {
 
     @Builder
     public UserResource(String id, String firstName, String lastName, String userName, String email, String mobilePhone, Integer age, String location, String timeZone, Date createTime, Date updateTime) {
-        this.id = id;
+        super();
+        this.userId = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
